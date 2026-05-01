@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --moa-void: #050506;
+  --moa-ink: #0b0b0c;
+  --moa-cream: #f3f0e8;
+  --moa-cream-muted: rgba(243, 240, 232, 0.72);
+  --moa-gold: #c5a36a;
+  --background: var(--moa-void);
+  --foreground: var(--moa-cream);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+}
+
+html {
+  background: var(--moa-void);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--moa-void);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  /* Prevent full-page horizontal scrollbar from full-bleed carousels / negative margins */
+  overflow-x: hidden;
+}
+
+/* Prevent dragging media (deck feel: no “grab” artifacts) */
+img,
+video {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), var(--font-body), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+::selection {
+  background: rgba(197, 163, 106, 0.35);
+}
+
+/*
+ * Hide scrollbars while keeping overflow scroll / touch pan behavior.
+ * Horizontal bars need height:0 on ::-webkit-scrollbar (Classic Windows themes still paint otherwise).
+ */
+.deck-scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+.deck-scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.deck-scrollbar-hide::-webkit-scrollbar-thumb,
+.deck-scrollbar-hide::-webkit-scrollbar-track,
+.deck-scrollbar-hide::-webkit-scrollbar-button {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
