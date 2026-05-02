@@ -64,8 +64,9 @@ export default function Home() {
         <CTASection />
 
         <footer className="border-t border-white/[0.06] py-12 text-center text-[11px] leading-relaxed text-white/35">
-          Mall of America — interactive sales experience (assignment build). Replace demo mailto domains before external
-          distribution.
+          Mall of America — interactive sales experience (assignment build). Mailto CTAs route to{" "}
+          <span className="font-mono text-white/55">ankurrawat620@gmail.com</span>; subject lines distinguish leasing,
+          partnerships, and events.
         </footer>
       </main>
     </DeckShell>

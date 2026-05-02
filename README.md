@@ -1,8 +1,26 @@
 # Mall of America — Interactive Sales Experience
 
-**Live URL:** `https://YOUR_DEPLOYMENT.vercel.app` (replace after deploying)
+**Live URL:** `https://mall-of-america-peach.vercel.app`
 
 An immersive, non-linear, video-first browser deck built for **live screen-share** and **standalone link** distribution. The experience is engineered like a luxury sales presentation (DigiDeck / keynote energy) — not a generic marketing site.
+
+## Screenshots
+
+Hero / opening:
+
+![Hero / Opening](public/assets/images/Screenshot/open.png)
+
+Why MOA:
+
+![Why MOA](public/assets/images/Screenshot/why.png)
+
+Events:
+
+![Events](public/assets/images/Screenshot/Events.png)
+
+## Lighthouse
+
+![Lighthouse score](public/assets/images/performance/Lighthouse-Score.png)
 
 ## Assignment summary
 
@@ -92,7 +110,7 @@ Future routes (`/events`, `/leasing`) can reuse the same data modules without re
 
 ## Known limitations
 
-- Mailto targets use **`@moa-deck.demo`** placeholders — replace before external sends.
+- Mailto targets route to **`ankurrawat620@gmail.com`**; **subject lines** distinguish leasing, partnerships, and events.
 - **Film modal** ships without a default YouTube ID — paste `filmFeature.youtubeId` after rights clearance (`src/data/deckContent.ts`).
 - Assignment demo assistant is **not** a trained model.
 

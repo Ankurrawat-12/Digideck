@@ -208,20 +208,21 @@ export const sections: DeckSection[] = [
 ];
 
 export const contactMail = {
-  leasing: "mailto:leasing@moa-deck.demo?subject=Mall%20of%20America%20%E2%80%94%20Leasing%20Inquiry",
+  leasing:
+    "mailto:ankurrawat620@gmail.com?subject=Mall%20of%20America%20%E2%80%94%20Leasing%20Inquiry",
   sponsorship:
-    "mailto:partnerships@moa-deck.demo?subject=Mall%20of%20America%20%E2%80%94%20Sponsorship%20Conversation",
-  events: "mailto:events@moa-deck.demo?subject=Mall%20of%20America%20%E2%80%94%20Event%20Booking",
-  general: "mailto:hello@moa-deck.demo?subject=Mall%20of%20America%20%E2%80%94%20Sales%20Deck",
+    "mailto:ankurrawat620@gmail.com?subject=Mall%20of%20America%20%E2%80%94%20Sponsorship%20Conversation",
+  events: "mailto:ankurrawat620@gmail.com?subject=Mall%20of%20America%20%E2%80%94%20Event%20Booking",
+  general: "mailto:ankurrawat620@gmail.com?subject=Mall%20of%20America%20%E2%80%94%20Sales%20Deck",
 };
 
 export function mailtoLeasing(subject: string) {
-  return `mailto:leasing@moa-deck.demo?subject=${encodeURIComponent(subject)}`;
+  return `mailto:ankurrawat620@gmail.com?subject=${encodeURIComponent(subject)}`;
 }
 
-/** Replace with production recipients before sending externally — demo placeholders. */
+/** For review: all mailto routes go to a single inbox; split by subject line. */
 export const contactNote =
-  "Demo mailto targets use @moa-deck.demo — swap in official routing before external use.";
+  "All mailto actions route to ankurrawat620@gmail.com — subject line indicates leasing, partnerships, or events.";
 
 export const filmFeature = {
   title: "Mall of America Destination Film",

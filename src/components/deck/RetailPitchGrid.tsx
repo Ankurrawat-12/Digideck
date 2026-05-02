@@ -41,7 +41,9 @@ export function RetailPitchGrid() {
       </div>
 
       <p className="mt-8 text-xs leading-relaxed text-white/40">
-        Mail actions route to demo placeholders — swap recipients in <span className="font-mono text-white/60">deckContent.ts</span>.
+        Mail actions route to <span className="font-mono text-white/60">ankurrawat620@gmail.com</span> (subject line
+        encodes the lane) — update routing in <span className="font-mono text-white/60">deckContent.ts</span> if you need
+        split inboxes.
       </p>
     </div>
   );

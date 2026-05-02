@@ -105,7 +105,8 @@ export function CTASection() {
         </div>
 
         <p className="mt-10 text-xs leading-relaxed text-white/40">
-          Note: mailto targets are demo placeholders — replace before sending externally. Share falls back to clipboard when Web Share is unavailable.
+          Note: mailto targets route to <span className="font-mono text-white/55">ankurrawat620@gmail.com</span> — subject
+          lines distinguish leasing, partnerships, and events. Share falls back to clipboard when Web Share is unavailable.
         </p>
       </div>
     </section>
