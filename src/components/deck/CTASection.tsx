@@ -11,21 +11,21 @@ const cards = [
     title: "Leasing inquiry",
     body: "Bring square footage needs, category, and timing — we’ll route you to the right conversation.",
     href: contactMail.leasing,
-    cta: "Email leasing",
+    cta: "Start leasing inquiry",
     variant: "primary" as const,
   },
   {
     title: "Sponsorship conversation",
     body: "Share audiences, KPIs, and seasons — build packaging against retail + entertainment adjacency.",
     href: contactMail.sponsorship,
-    cta: "Email partnerships",
+    cta: "Start partnership brief",
     variant: "ghost" as const,
   },
   {
     title: "Event booking",
     body: "Send desired dates, footprint, and production needs — start with format and hospitality.",
     href: contactMail.events,
-    cta: "Email events",
+    cta: "Request event availability",
     variant: "ghost" as const,
   },
 ];
@@ -105,8 +105,7 @@ export function CTASection() {
         </div>
 
         <p className="mt-10 text-xs leading-relaxed text-white/40">
-          Note: mailto targets route to <span className="font-mono text-white/55">ankurrawat620@gmail.com</span> — subject
-          lines distinguish leasing, partnerships, and events. Share falls back to clipboard when Web Share is unavailable.
+          Note: Share falls back to clipboard when Web Share is unavailable.
         </p>
       </div>
     </section>

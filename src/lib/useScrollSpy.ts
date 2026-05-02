@@ -42,7 +42,7 @@ export function useScrollSpy(sectionIds: string[]) {
       window.removeEventListener("scroll", compute);
       window.removeEventListener("resize", compute);
     };
-  }, [...sectionIds, "__scrollspy__"]);
+  }, [sectionIds]);
 
   return activeId;
 }

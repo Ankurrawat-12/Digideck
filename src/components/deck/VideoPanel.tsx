@@ -54,10 +54,7 @@ export function VideoPanel({
 
   useEffect(() => {
     if (!priority || reduced) return;
-    if (deferMs <= 0) {
-      setActive(true);
-      return;
-    }
+    if (deferMs <= 0) return;
     const t = window.setTimeout(() => setActive(true), deferMs);
     return () => window.clearTimeout(t);
   }, [deferMs, priority, reduced]);

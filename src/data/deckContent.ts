@@ -220,9 +220,8 @@ export function mailtoLeasing(subject: string) {
   return `mailto:ankurrawat620@gmail.com?subject=${encodeURIComponent(subject)}`;
 }
 
-/** For review: all mailto routes go to a single inbox; split by subject line. */
 export const contactNote =
-  "All mailto actions route to ankurrawat620@gmail.com — subject line indicates leasing, partnerships, or events.";
+  "Mail actions route to a single inbox during review; subject lines distinguish leasing, partnerships, and events.";
 
 export const filmFeature = {
   title: "Mall of America Destination Film",

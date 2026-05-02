@@ -4,6 +4,11 @@
 
 An immersive, non-linear, video-first browser deck built for **live screen-share** and **standalone link** distribution. The experience is engineered like a luxury sales presentation (DigiDeck / keynote energy) — not a generic marketing site.
 
+## Submission
+
+- **Live app**: `https://mall-of-america-peach.vercel.app`
+- **GitHub repo**: `https://github.com/Ankurrawat-12/Mall-of-America`
+
 ## Screenshots
 
 Hero / opening:
@@ -126,6 +131,12 @@ Future routes (`/events`, `/leasing`) can reuse the same data modules without re
 Verified facts used in copy are labeled for traceability in `src/data/sources.ts`. Confirm **current** figures with Mall of America communications before executive distribution.
 
 Hypothetical venue modules are labeled **Concept module** in UI + data.
+
+### Sources (MOA facts)
+
+- Official MOA facts: `https://www.mallofamerica.com/about/moa/facts`
+- MOA press release with scale summary: `https://www.mallofamerica.com/press-release/28577`
+- Wikipedia overview (quick reference): `https://en.wikipedia.org/wiki/Mall_of_America`
 
 ---
 
