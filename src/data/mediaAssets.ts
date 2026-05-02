@@ -17,7 +17,7 @@ export const VIDEO = {
   dwellTime: "/assets/videos/dwell_time.mp4",
   leasing: "/assets/videos/leasing.mp4",
   nightEvent: "/assets/videos/night_event.mp4",
-  seasonalMarket: "/assets/videos/sseasonal_market.mp4",
+  seasonalMarket: "/assets/videos/seasonal_market.mp4",
   tourismArrival: "/assets/videos/tourism_arrival.mp4",
 } as const;
 
@@ -28,7 +28,7 @@ export const POSTER = {
   attractions: "/assets/images/expo.png",
   events: "/assets/images/performing.png",
   dining: "/assets/images/brand.png",
-  sponsorship: "/assets/images/sponsership.png",
+  sponsorship: "/assets/images/sponsorship.png",
 } as const;
 
 export const IMAGE = {
@@ -48,5 +48,5 @@ export const IMAGE = {
   brandActivation: "/assets/images/brand.png",
   expoConcept: "/assets/images/expo.png",
   performingArtsConcept: "/assets/images/performing.png",
-  sponsorshipStill: "/assets/images/sponsership.png",
+  sponsorshipStill: "/assets/images/sponsorship.png",
 } as const;

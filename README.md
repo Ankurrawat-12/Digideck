@@ -85,7 +85,7 @@ Paths are centralized in `src/data/mediaAssets.ts`. Default layout matches the b
 - `public/assets/images/` — `hero.png`, `retail.png`, `brand.png`, `expo.png`, `performing.png`, `mall-map-abstract.svg`
 - Optional `public/assets/posters/` — if you add JPG posters later, point `POSTER` entries in `mediaAssets.ts` at those files instead of PNGs
 
-Additional clips supported (optional): `deal_moment.mp4`, `dwell_time.mp4`, `leasing.mp4`, `night_event.mp4`, `sseasonal_market.mp4`, `tourism_arrival.mp4`.
+Additional clips supported (optional): `deal_moment.mp4`, `dwell_time.mp4`, `leasing.mp4`, `night_event.mp4`, `seasonal_market.mp4`, `tourism_arrival.mp4`.
 
 The UI **fails gracefully** — missing video falls back to posters + `MediaFallback`, and broken images never flash broken icons.
 
