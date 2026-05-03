@@ -4,6 +4,8 @@
 
 An immersive, non-linear, video-first browser deck built for **live screen-share** and **standalone link** distribution. The experience is engineered like a luxury sales presentation (DigiDeck / keynote energy) — not a generic marketing site.
 
+Optional write-up: see [WRITEUP.md](WRITEUP.md).
+
 ## Submission
 
 - **Live app**: `https://mall-of-america-peach.vercel.app`
