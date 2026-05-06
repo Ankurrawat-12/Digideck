@@ -1,7 +1,5 @@
 export function scrollToSection(hashOrId: string) {
   const id = hashOrId.startsWith("#") ? hashOrId.slice(1) : hashOrId;
-  const el = document.getElementById(id);
-  if (!el) return;
 
   const prefersReduced =
     typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -12,5 +10,12 @@ export function scrollToSection(hashOrId: string) {
     if (window.location.hash !== nextHash) window.history.pushState(null, "", nextHash);
   }
 
+  // If the experience is running in "deck mode", let the shell intercept the intent.
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("deck:navigate", { detail: { id } }));
+  }
+
+  const el = document.getElementById(id);
+  if (!el) return;
   el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
 }

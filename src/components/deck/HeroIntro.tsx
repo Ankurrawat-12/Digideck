@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { MetricStrip } from "./MetricStrip";
 import { VideoPanel } from "./VideoPanel";
+import { RotatingSubcopy } from "./RotatingSubcopy";
 
 export function HeroIntro({ className }: { className?: string }) {
   const reduced = useReducedMotionSafe();
@@ -63,7 +64,13 @@ export function HeroIntro({ className }: { className?: string }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reduced ? 0 : 0.75, delay: reduced ? 0 : 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
-          {heroCopy.subtitle}
+          <RotatingSubcopy
+            lines={[
+              heroCopy.subtitle,
+              "A deck built for live calls: cinematic intro, non-linear journeys, and clear CTAs for leasing, sponsorship, and events.",
+            ]}
+            intervalMs={4600}
+          />
         </motion.p>
 
         <motion.div

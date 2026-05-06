@@ -17,14 +17,19 @@ export function StorySection({
   mediaSide = "right",
   children,
   belowFold,
+  variant = "scroll",
+  showMedia = true,
 }: {
   section: DeckSection;
   mediaSide?: "left" | "right";
   children?: ReactNode;
   belowFold?: ReactNode;
+  variant?: "scroll" | "deck";
+  showMedia?: boolean;
 }) {
   const reduced = useReducedMotionSafe();
   const media = section.media;
+  const deckMode = variant === "deck";
 
   const mediaNode =
     media?.type === "video" ? (
@@ -50,18 +55,25 @@ export function StorySection({
   return (
     <section
       id={section.hash}
-      className="scroll-mt-28 border-t border-white/[0.06] bg-transparent py-20 sm:py-24 lg:py-28"
+      className={cn(
+        "bg-transparent",
+        variant === "scroll"
+          ? "scroll-mt-28 border-t border-white/[0.06] py-20 sm:py-24 lg:py-28"
+          : "pt-[max(5.5rem,env(safe-area-inset-top))] pb-[max(4.5rem,env(safe-area-inset-bottom))] md:pt-28 md:pb-20",
+      )}
     >
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-10">
-        <div className="grid items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className={cn("grid items-stretch gap-10 lg:gap-14", showMedia ? "lg:grid-cols-12" : "")}>
           <motion.div
             className={cn(
-              "self-start lg:col-span-5",
+              "self-start",
+              showMedia ? "lg:col-span-5" : "lg:col-span-12",
               mediaSide === "left" ? "lg:order-2" : "lg:order-1",
             )}
             initial={reduced ? false : { opacity: 0, y: 14, scale: 0.99 }}
-            whileInView={reduced ? undefined : { opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-12% 0px" }}
+            whileInView={deckMode || reduced ? undefined : { opacity: 1, y: 0, scale: 1 }}
+            animate={deckMode ? { opacity: 1, y: 0, scale: 1 } : undefined}
+            viewport={deckMode ? undefined : { once: true, margin: "-12% 0px" }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             {section.eyebrow ? <Badge className="mb-5">{section.eyebrow}</Badge> : null}
@@ -98,18 +110,21 @@ export function StorySection({
             {children ? <div className="mt-10">{children}</div> : null}
           </motion.div>
 
-          <motion.div
-            className={cn(
-              "self-stretch lg:col-span-7",
-              mediaSide === "left" ? "lg:order-1" : "lg:order-2",
-            )}
-            initial={reduced ? false : { opacity: 0, y: 14, scale: 0.99 }}
-            whileInView={reduced ? undefined : { opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-12% 0px" }}
-            transition={{ duration: 0.55, delay: reduced ? 0 : 0.06, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {mediaNode}
-          </motion.div>
+          {showMedia ? (
+            <motion.div
+              className={cn(
+                "self-stretch lg:col-span-7",
+                mediaSide === "left" ? "lg:order-1" : "lg:order-2",
+              )}
+              initial={reduced ? false : { opacity: 0, y: 14, scale: 0.99 }}
+              whileInView={deckMode || reduced ? undefined : { opacity: 1, y: 0, scale: 1 }}
+              animate={deckMode ? { opacity: 1, y: 0, scale: 1 } : undefined}
+              viewport={deckMode ? undefined : { once: true, margin: "-12% 0px" }}
+              transition={{ duration: 0.55, delay: reduced ? 0 : 0.06, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {mediaNode}
+            </motion.div>
+          ) : null}
         </div>
 
         {belowFold ? (

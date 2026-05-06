@@ -1,3 +1,28 @@
+@keyframes deck-breathe {
+  0% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.14;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+}
+
+.deck-breathe {
+  animation: deck-breathe 7.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deck-breathe {
+    animation: none;
+  }
+}
+
 @import "tailwindcss";
 
 :root {

@@ -125,25 +125,25 @@ export const sponsorshipTiers: SponsorshipTier[] = [
     id: "signature",
     title: "Signature Partner",
     summary: "Year-round presence across retail, attractions, and marquee seasonal beats.",
-    signals: ["Cross-property visibility", "Hero seasonal alignment", "Executive hospitality pathways"],
+    signals: ["Cross-property visibility"],
   },
   {
     id: "seasonal",
     title: "Seasonal Campaign Partner",
     summary: "Own a narrative arc — holidays, back-to-school, summer tourism peaks.",
-    signals: ["Focused budget efficiency", "High-impact bursts", "Retail adjacency"],
+    signals: ["Focused budget efficiency"],
   },
   {
     id: "attraction",
     title: "Attraction / Experience Partner",
     summary: "Activate inside the entertainment spine — families, fans, travelers.",
-    signals: ["Experience-led storytelling", "Photo-forward moments", "Extended dwell"],
+    signals: ["Experience-led storytelling"],
   },
   {
     id: "event-series",
     title: "Event Series Partner",
     summary: "Attach to recurring programming — music, fashion, culture, community.",
-    signals: ["Built-in audiences", "Repeat touchpoints", "Social amplification hooks"],
+    signals: ["Built-in audiences"],
   },
   {
     id: "pop-up",
@@ -260,19 +260,7 @@ export const venueConcepts: VenueConceptCard[] = [
     title: "Brand immersion suite",
     description: "Private storytelling rooms + guided retail journeys — concept module.",
     isConcept: true,
-  },
-  {
-    id: "marketplace",
-    title: "Seasonal marketplace",
-    description: "Food, makers, retail stalls — tourism peaks become merchant peaks — concept module.",
-    isConcept: true,
-  },
-  {
-    id: "launch-court",
-    title: "Product launch court",
-    description: "A hero zone engineered for queues, LED beats, and controlled spectacle — concept module.",
-    isConcept: true,
-  },
+  }
 ];
 
 export type RetailTenantArchetype = {

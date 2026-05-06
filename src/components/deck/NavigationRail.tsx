@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navSections } from "@/data/deckContent";
-import { scrollToSection } from "@/lib/scrollToSection";
 import { cn } from "@/lib/cn";
+import { useDeck } from "./DeckContext";
 
 export function NavigationRail({ activeId }: { activeId: string }) {
   const [open, setOpen] = useState(false);
+  const deck = useDeck();
 
   useEffect(() => {
     if (!open) return;
@@ -17,6 +18,22 @@ export function NavigationRail({ activeId }: { activeId: string }) {
       document.body.style.overflow = prev;
     };
   }, [open]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+        return;
+      }
+      if (e.key === "g" || e.key === "G") {
+        e.preventDefault();
+        setOpen(true);
+      }
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <>
@@ -45,7 +62,7 @@ export function NavigationRail({ activeId }: { activeId: string }) {
             <button
               key={s.hash}
               type="button"
-              onClick={() => scrollToSection(`#${s.hash}`)}
+              onClick={() => deck.setActiveId(s.hash, { source: "nav" })}
               className={cn(
                 "relative w-full rounded-xl px-1.5 py-2 text-left text-[9px] font-semibold uppercase leading-snug tracking-[0.08em] transition-colors",
                 active ? "text-[var(--moa-cream)]" : "text-white/45 hover:text-white/75",
@@ -95,7 +112,7 @@ export function NavigationRail({ activeId }: { activeId: string }) {
                       : "border-white/10 bg-white/[0.03] text-white/75 hover:border-white/20",
                   )}
                   onClick={() => {
-                    scrollToSection(`#${s.hash}`);
+                    deck.setActiveId(s.hash, { source: "nav" });
                     setOpen(false);
                   }}
                 >

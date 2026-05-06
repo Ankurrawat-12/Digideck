@@ -8,6 +8,7 @@
 
 export const VIDEO = {
   hero: "/assets/videos/hero_loop.mp4",
+  cta: "/assets/videos/cta.mp4",
   retail: "/assets/videos/retail_1_loop.mp4",
   attractions: "/assets/videos/attractions_loop.mp4",
   events: "/assets/videos/events_loop.mp4",

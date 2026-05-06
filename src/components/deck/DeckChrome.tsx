@@ -17,18 +17,20 @@ export function DeckChrome({
         variant="outline"
         className="bg-black/45 px-3 py-2 text-[12px] backdrop-blur-xl md:px-5 md:text-[13px]"
         onClick={onOpenFilm}
+        aria-label="Open film"
       >
         <Clapperboard className="h-4 w-4 shrink-0" aria-hidden />
-        Film
+        <span className="hidden sm:inline">Film</span>
       </Button>
       <Button
         type="button"
         variant="outline"
         className="bg-black/45 px-3 py-2 text-[12px] backdrop-blur-xl md:px-5 md:text-[13px]"
         onClick={onOpenBrief}
+        aria-label="Open brief assistant"
       >
         <Sparkles className="h-4 w-4 shrink-0" aria-hidden />
-        Brief assistant
+        <span className="hidden sm:inline">Brief assistant</span>
       </Button>
     </div>
   );

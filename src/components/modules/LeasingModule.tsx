@@ -13,7 +13,10 @@ export function LeasingModule() {
   const reduced = useReducedMotionSafe();
 
   return (
-    <section id="leasing" className="scroll-mt-28 border-t border-white/[0.06] py-20 sm:py-24 lg:py-28">
+    <section
+      id="leasing"
+      className="bg-transparent pt-[max(5.5rem,env(safe-area-inset-top))] pb-[max(4.5rem,env(safe-area-inset-bottom))] md:pt-28 md:pb-20"
+    >
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-10">
         <div className="grid items-stretch gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-6">
