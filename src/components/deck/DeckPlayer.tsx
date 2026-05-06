@@ -79,7 +79,12 @@ export function DeckPlayer() {
       case "retail":
         return (
           <SlideFrame>
-            <DeckFrame backgroundVideoSrc={VIDEO.retail} backgroundVideoPoster={POSTER.retail} backgroundClassName="opacity-[0.9]">
+            <DeckFrame
+              backgroundVideoSrc={VIDEO.retail}
+              backgroundVideoPoster={POSTER.retail}
+              backgroundClassName="opacity-[0.9]"
+              backgroundDeferMs={750}
+            >
               <RetailSlide />
             </DeckFrame>
           </SlideFrame>
@@ -99,6 +104,7 @@ export function DeckPlayer() {
               backgroundVideoSrc={VIDEO.dining}
               backgroundVideoPoster={POSTER.dining}
               backgroundClassName="opacity-[0.9]"
+              backgroundDeferMs={750}
             >
               <DiningSlide />
             </DeckFrame>
@@ -111,6 +117,7 @@ export function DeckPlayer() {
               backgroundVideoSrc={VIDEO.dealMoment}
               backgroundVideoPoster={POSTER.hero}
               backgroundClassName="opacity-[0.9]"
+              backgroundDeferMs={750}
             >
               <StorySection section={sectionById("momentum")} mediaSide="left" variant="deck" showMedia={false} />
             </DeckFrame>
@@ -123,6 +130,7 @@ export function DeckPlayer() {
               backgroundVideoSrc={VIDEO.attractions}
               backgroundVideoPoster={POSTER.attractions}
               backgroundClassName="opacity-[0.9]"
+              backgroundDeferMs={750}
             >
               <StorySection
                 section={sectionById("attractions")}
@@ -139,6 +147,7 @@ export function DeckPlayer() {
               backgroundVideoSrc={VIDEO.events}
               backgroundVideoPoster={POSTER.events}
               backgroundClassName="opacity-[0.9]"
+              backgroundDeferMs={750}
             >
               <EventsSlide />
             </DeckFrame>
@@ -151,6 +160,7 @@ export function DeckPlayer() {
               backgroundVideoSrc={VIDEO.sponsorship}
               backgroundVideoPoster={POSTER.sponsorship}
               backgroundClassName="opacity-[0.9]"
+              backgroundDeferMs={750}
             >
               <SponsorshipSlide />
             </DeckFrame>
@@ -163,6 +173,7 @@ export function DeckPlayer() {
               backgroundVideoSrc={VIDEO.leasing}
               backgroundVideoPoster={POSTER.retail}
               backgroundClassName="opacity-[0.9]"
+              backgroundDeferMs={750}
             >
               <LeasingSlide />
             </DeckFrame>
@@ -184,6 +195,7 @@ export function DeckPlayer() {
               backgroundVideoSrc={VIDEO.cta}
               backgroundVideoPoster={POSTER.hero}
               backgroundClassName="opacity-[0.85]"
+              backgroundDeferMs={850}
             >
               <CTASection />
               <footer className="border-t border-white/[0.06] py-10 text-center text-[11px] leading-relaxed text-white/35">
