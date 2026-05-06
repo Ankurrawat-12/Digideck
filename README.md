@@ -75,8 +75,8 @@ pnpm start
 
 The deck optimizes for **evaluators** and **live reps**:
 
-- **Non-linear navigation** — left rail (tablet/desktop), mobile sheet, scroll spy, objective jump cards.
-- **Video-first sections** — muted, `playsInline`, poster-first, intersection-gated loading for loops (hero loads eagerly).
+- **Deck-style navigation** — discrete slides (not a scrolling site) with arrow-key navigation + a clean “Now viewing” header.
+- **Video-first chapters** — muted, `playsInline`, poster-first backgrounds; videos defer slightly so posters can land as LCP.
 - **Luxury restraint** — black void base, warm cream typography, muted goldused sparingly as an accent rail — not “neon luxury”.
 - **Motion discipline** — fades, subtle Y reveals, gentle scale from `0.98 → 1`; respects `prefers-reduced-motion`.
 
@@ -88,7 +88,7 @@ This assignment artifact was developed with AI-assisted editing in Cursor (inter
 
 Paths are centralized in `src/data/mediaAssets.ts`. Default layout matches the bundled library:
 
-- `public/assets/videos/` — `hero_loop.mp4`, `dining_loop.mp4`, `events_loop.mp4` (extra sections may reuse a loop until you add clips)
+- `public/assets/videos/` — `hero_loop.mp4`, `dining_loop.mp4`, `events_loop.mp4`, `cta.mp4` (chapter backgrounds; concept clips ok for assignment)
 - `public/assets/images/` — `hero.png`, `retail.png`, `brand.png`, `expo.png`, `performing.png`, `mall-map-abstract.svg`
 - Optional `public/assets/posters/` — if you add JPG posters later, point `POSTER` entries in `mediaAssets.ts` at those files instead of PNGs
 
@@ -98,11 +98,11 @@ The UI **fails gracefully** — missing video falls back to posters + `MediaFall
 
 ## Performance strategy
 
-- `next/image` for stills with `sizes` tuned for split layouts
-- Video loops: `preload="metadata"`, lazy activation via `IntersectionObserver` (unless `priority` hero)
-- Below-the-fold module chunks loaded via `next/dynamic` for Events + Sponsorship modules
+- `next/image` for stills (including deck background stills) with `sizes` tuned for the framed layout
+- Poster-first background films (video starts after a short defer so posters can become LCP)
+- Video loops use `preload="metadata"` + `playsInline` + muted autoplay
 - No YouTube iframe until the film modal opens
-- Reduced motion fallbacks for scroll behavior + motion-heavy paths
+- Reduced-motion fallbacks for motion-heavy paths
 
 ## Expansion architecture
 

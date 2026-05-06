@@ -8,7 +8,9 @@ The goal was not to ship a conventional marketing website. I built a browser-bas
 
 **Visual direction.** The experience opens with a **cinematic hero**—immediate scale and atmosphere before any dense copy. The palette is a **premium black base with warm gold accents** (used sparingly so it reads as refinement, not decoration). I took cues from **luxury retail presentations**, **Apple- and Tesla-style** restraint, and tools like **DigiDeck**: large editorial typography, **minimal chrome**, and **video-first sections** that carry emotion faster than static grids.
 
-**Interaction model.** Navigation is **non-linear**: objectives and sections can be reached from multiple paths (rail, mobile sheet, in-content jumps) so the deck matches how real sales conversations branch—leasing vs. sponsorship vs. events—rather than forcing a single scroll-only funnel. Flows are **objective-based**: each journey maps to a commercial outcome.
+**Interaction model.** The deck is intentionally **not a scrolling website**. It behaves like a presentation: discrete chapters with **prev/next controls**, keyboard navigation, and objective-based entry points. Each chapter sits inside a framed “deck” canvas (DigiDeck-style), and several chapters use **full-frame background films** to keep the experience cinematic without crowding the UI.
+
+To keep slides readable on a live call, dense content is handled through **paced reveal** (staggered animation) and lightweight **auto-rotating subviews** (with hover-to-pause) rather than piling everything into a single screen.
 
 **Why structure around outcomes.** Mall of America is sold through distinct motions—**leasing**, **sponsorship**, **events**, **activations**, and **venue expansion** stories. The deck mirrors that reality so evaluators find the proof they need without wading through irrelevant lanes.
 
@@ -32,15 +34,15 @@ I used AI **pragmatically and transparently**:
 
 ## 5. Technical Approach
 
-The stack is **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion** for restrained motion. Content lives in **modular, data-driven sections** with **reusable presentation components**, so adding a new chapter is closer to extending configuration than rewriting the page.
+The stack is **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion** for restrained motion. The experience is implemented as an index-driven **deck player** (not a long page), with modular “slides” and reusable primitives. Adding a new chapter is closer to extending configuration than rewriting layout.
 
-Media is **local and optimized** where possible, with **lazy loading** and poster-first video patterns so the first impression stays crisp without blocking the whole thread. Layout is **responsive with a desktop/tablet-first** bias—matching how this deck is actually presented.
+Media is **local and optimized** where possible. Background films are **poster-first** so the still frame can land as the LCP and the video can start a moment later. Layout is **responsive with a desktop/tablet-first** bias—matching how this deck is typically presented.
 
 The app is deployed on **Vercel**. The architecture is intentionally boring in the right ways: static-feeling delivery, room to grow into **deeper leasing paths**, **sponsorship calculators**, **venue booking flows**, and **rep-specific tools** without a ground-up rewrite.
 
 ## 6. Performance Considerations
 
-**Compressed local video loops** and **poster images** keep loops readable without giant autoplay tax. **Lazy loading** and **dynamic imports** for heavier modules reduce initial work. There is **no heavy map API** and **no backend dependency** for core viewing—fewer moving parts for a review artifact and a faster path to “open link, present.” The experience avoids **iframe-heavy first paint** (e.g., deferring embedded players until needed). The result is a **clean build** and a deployment story that stays simple to maintain.
+**Compressed local video loops** and **poster images** keep motion readable without a giant autoplay tax. Background films are delayed slightly so posters can render quickly, and still assets route through image optimization where appropriate. There is **no heavy map API** and **no backend dependency** for core viewing—fewer moving parts for a review artifact and a faster path to “open link, present.” The experience avoids **iframe-heavy first paint** (e.g., embedded players are deferred until opened). The goal was a **clean build** with predictable performance characteristics.
 
 ## 7. What I Would Improve With More Time
 
